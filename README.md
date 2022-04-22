@@ -13,9 +13,9 @@ We have four nodes in total:
 2. [**state_machine**](https://github.com/serenapaneri/rt2_assignment1/blob/ros2/src/state_machine.cpp): this node is contained in the src folder and it represents a finite state machine which has only two states that are when the robot starts and when the robot stops. This node may call the position server and after called the position server, so after it receives the target x y and theta position, it will call the navigation service. It also implement a service for interacting with the user interface. This is a c++ node.
 
 ### Custom services in the srv folder
-1. [**RandomPosition**](https://github.com/serenapaneri/rt2_assignment1/blob/main/srv/RandomPosition.srv): it expects a x_max, x_min, y_max and y_min and replies with an x, y and theta. This is the service message used by the random position service. 
-2. [**Position**](https://github.com/serenapaneri/rt2_assignment1/blob/main/srv/Position.srv): it is the message sent to the go_to_point service. 
-3. [**Command**](https://github.com/serenapaneri/rt2_assignment1/blob/main/srv/Command.srv): it is just a string command which will be start or stop. 
+1. [**RandomPosition**](https://github.com/serenapaneri/rt2_assignment1/blob/ros2/srv/RandomPosition.srv): it expects a x_max, x_min, y_max and y_min and replies with an x, y and theta. This is the service message used by the random position service. 
+2. [**Position**](https://github.com/serenapaneri/rt2_assignment1/blob/ros2/srv/Position.srv): it is the message sent to the go_to_point service. 
+3. [**Command**](https://github.com/serenapaneri/rt2_assignment1/blob/ros2/srv/Command.srv): it is just a string command which will be start or stop. 
 
 ### Launch file
 There is a launch file contained in the folder launch which is [**ros2.py**](https://github.com/serenapaneri/rt2_assignment1/blob/ros2/launch/ros2.py) that will just spawn the robot in the Gazebo simulator and then it launches the two nodes, or better the two executables inside a container used for composable nodes. 
