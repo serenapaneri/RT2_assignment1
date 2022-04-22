@@ -45,7 +45,7 @@ source /opt/ros/foxy/setup.bash
 ```
 
 ### Warnings
-Before running the code correctly you should download also the package in the branch main and put it in your ros1 worksapce. Moreover you need to do a little modification that consists on opening the launch file [**sim.launch**](https://github.com/serenapaneri/rt2_assignment1/blob/main/launch/sim.launch) and delete the lines related to the nodes **user_interface.py** and **go_to_point.py".
+Before running the code correctly you should download also the package in the branch main and put it in your ros1 worksapce. Moreover you need to do a little modification that consists on opening the launch file [**sim.launch**](https://github.com/serenapaneri/rt2_assignment1/blob/main/launch/sim.launch) and delete the lines related to the nodes **user_interface.py** and **go_to_point.py**.
 
 ## How to run the code
 In order to run the Gazebo simulation:
