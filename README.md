@@ -24,7 +24,7 @@ There is a launch file contained in the folder launch which is [**ros2.py**](htt
 This file is used to make possible the communication between ros1 and ros2 nodes through the package ros1_bridge.
 
 ## Required packages
-You will need the ros1_bridge package, that you can dowload from [**here**](https://github.com/ros2/ros1_bridge.git) and 3 source files in order to set the environments of ros1 and ros2 and also the two environments together.
+You will need the ros1_bridge package, that you can dowload from [**here**](https://github.com/ros2/ros1_bridge.git), and 3 source files in order to set the environments of ros1 and ros2 and also the two environments together.
 For ros1 environment you should create a file ros.sh:
 ```
 #!/bin/bash
