@@ -13,6 +13,8 @@ position_ = Point()
 yaw_ = 0
 position_ = 0
 state_ = 0
+
+#publisher used for cmd_vel
 pub_ = None
 
 # parameters for control
@@ -26,6 +28,10 @@ lb_a = -0.5
 ub_d = 0.6
 
 def clbk_odom(msg):
+    """
+    This is the callback function that is used to know 
+    the actual position of the robot in the space.
+    """
     global position_
     global yaw_
 
@@ -43,17 +49,29 @@ def clbk_odom(msg):
 
 
 def change_state(state):
+    """
+    With this function we are able to switch 
+    between the different states of this service.
+    """
     global state_
     state_ = state
     print ('State changed to [%s]' % state_)
 
 
 def normalize_angle(angle):
+    """
+    This function is used to normalized the angle
+    """
     if(math.fabs(angle) > math.pi):
         angle = angle - (2 * math.pi * angle) / (math.fabs(angle))
     return angle
 
 def fix_yaw(des_pos):
+    """
+    This function is used to adjust the yaw angle
+    of the robot in a way that it is directly
+    alligned with the target position to be reached.
+    """
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = normalize_angle(desired_yaw - yaw_)
     rospy.loginfo(err_yaw)
@@ -72,6 +90,10 @@ def fix_yaw(des_pos):
 
 
 def go_straight_ahead(des_pos):
+    """
+    This function allows the robot to move
+    straight to reach the goal position
+    """
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = desired_yaw - yaw_
     err_pos = math.sqrt(pow(des_pos.y - position_.y, 2) +
@@ -97,6 +119,10 @@ def go_straight_ahead(des_pos):
         change_state(0)
 
 def fix_final_yaw(des_yaw):
+    """
+    This function allows the robot to adjust its
+    goal orientation
+    """
     err_yaw = normalize_angle(des_yaw - yaw_)
     rospy.loginfo(err_yaw)
     twist_msg = Twist()
@@ -113,12 +139,20 @@ def fix_final_yaw(des_yaw):
         change_state(3)
         
 def done():
+    """
+    This function is used to stop the robot
+    """
     twist_msg = Twist()
     twist_msg.linear.x = 0
     twist_msg.angular.z = 0
     pub_.publish(twist_msg)
     
 def go_to_point(req):
+    """
+    This function is used to regulate the different
+    states of the robot in a way to achieve the correct 
+    behavior to be followed in order to reach the goal.
+    """
     desired_position = Point()
     desired_position.x = req.x
     desired_position.y = req.y
@@ -137,6 +171,10 @@ def go_to_point(req):
     return True
 
 def main():
+    """
+    This is the main function in which we create a publisher,
+    a subscriber and a simple server.
+    """
     global pub_
     rospy.init_node('go_to_point')
     pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=1)

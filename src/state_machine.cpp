@@ -5,6 +5,12 @@
 
 bool start = false;
 
+/**
+ * This function contained the request made by the user
+ * in the user_interface to make the robot move and to
+ * make the robot stop.
+ */
+
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
     if (req.command == "start"){
     	start = true;
@@ -15,6 +21,11 @@ bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Com
     return true;
 }
 
+/**
+ * This is the main function of the node state_machine and it menages
+ * a server and two clients. Moverover it menages the two different 
+ * states in which the robot could be.
+ */
 
 int main(int argc, char **argv)
 {

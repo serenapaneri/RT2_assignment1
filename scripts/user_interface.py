@@ -3,6 +3,12 @@ import time
 from rt2_assignment1.srv import Command
 
 def main():
+    """
+    This is the main function of the user_interface node. 
+    It asks the user to start or to stop the robot, by pressing 
+    1 and 0 respectively, and it calls the service implemented 
+    in the finite_state_machine node.
+    """
     rospy.init_node('user_interface')
     ui_client = rospy.ServiceProxy('/user_interface', Command)
     time.sleep(10)
