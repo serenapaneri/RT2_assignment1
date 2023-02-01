@@ -1,34 +1,40 @@
 /**
- * \file state_machine.cpp
- * \brief This node implements the state machine
- * \author Serena Paneri 4506977
- * \version 1.0
- * \date 13/08/2022
- * 
- * \details
- * 
- * Services: <BR>
- *	°/user_interface
- *
- * Client: <BR>
- * 	°/position_server
- *
- * Action client: <BR>
- * 	°/go_to_point
- * 
- * Description:
- *
- * This node represents the state machine of the program and it only has two states
- * that are when the robot starts and when the robot stops. 
- * When the user starts the simulation by exploiting the user_interface, the state
- * machine calls the position_server in order to recieve the random x and y position 
- * and orientation theta, that will be the goal to be achieved by the robot in the 
- * simulation environemnt. Moreover it manages the action server go_to_point that
- * will drive the robot toward the goal position.
- * After achieving the goal position the state machine will make again the same 
- * requests as before until the user manually stops the behavior of the robot by
- * exploiting again the user_interface.
- */
+* \file state_machine.cpp
+* \brief This node implements the state machine
+* 
+* \author Serena Paneri 4506977
+* \version 1.0
+* \date 13/08/2022
+* 
+* \details
+* 
+* Subscribes to: <BR>
+*     None
+*
+* Publishes to: <BR>
+*     robot_target
+*
+* Services: <BR>
+*     /user_interface
+*
+* Client: <BR>
+*     /position_server
+*
+* Action client: <BR>
+*     /go_to_point
+* 
+* Description: <BR>
+* This node represents the state machine of the program and it only has two states that are
+* when the robot starts and when the robot stops. 
+* When the user starts the simulation by exploiting the user_interface, the state machine
+* calls the position_server in order to recieve the random x and y position and orientation
+* theta, that will be the goal to be achieved by the robot in the simulation environment.
+* Moreover it manages the action server go_to_point that will drive the robot toward the 
+* goal position.
+* After achieving the goal position the state machine will make again the same request as
+* before until the user manually stops the behavior of the robot by exploiting again the
+* user_interface.
+*/
 
 
 #include "ros/ros.h"
@@ -39,18 +45,18 @@
 #include "actionlib/client/terminal_state.h"
 #include "std_msgs/Int32.h"
 
+// start variable
 bool start = false;
 
 /**
- *
- * \param req: it is the request done by the user_interface
- * \param res: it is the response about the state of the robot
- *
- * \retval true
- *
- * This function contains the request made by the user in the user_interface to make 
- * the robot move.
- */
+* \brief Callback function of /user_interface topic
+* \param req: it is the request done by the service
+* \param res: it is the response to the client
+* \return true
+*
+* This function contains the request made by the user in the user_interface to make 
+* the robot move.
+*/
 
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
     if (req.command == "start"){
@@ -63,13 +69,17 @@ bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Com
 }
 
 /**
- *
- * \retval 0
- *
- * This is the main function of the node state_machine and it menages a server, a  
- * client and an action client. Moverover it menages the two different states in which 
- * the robot could be.
- */
+* \brief Main function of the node state_machine
+* \param None
+* \return 0
+*
+* This is the main function of the node state_machine where the node is initialized. 
+* Moreover the service to start the behavior of the robot is implemented, the client of  
+* the position service to retrieve the goal position and orientation, an action client to
+* make the robot move toward the target and a publisher that advertise if the robot reaches 
+* or not the goal in the environment. Moverover it menages the two different states in which 
+* the robot could be.
+*/
 
 int main(int argc, char **argv)
 {
