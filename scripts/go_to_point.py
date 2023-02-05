@@ -23,7 +23,7 @@
 # target position and orientation in the environment. The use of an action server is adopted since
 # it provides more functionalities, including the possibility of recieving feedbacks and, moreover, the
 # possibility to cancel a goal and make the robot stops immediately and not only after it has achieved 
-# the target position. 
+# the target position.
 
 import rospy
 import rt2_assignment1.msg
@@ -44,7 +44,7 @@ state_ = 0
 # publisher used for cmd_vel
 pub_ = None
 
-# action server
+#action server
 act_s = None
 
 # parameters for control
