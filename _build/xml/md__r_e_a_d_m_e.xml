@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>Second Assignment of the Research Track 2 course (Robotics Engineering / JEMARO, Unige)</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>General information</title>
+<para>This ROS package contains three nodes, the simulation environment and the jupyter notebbok for controlling a mobile robot in a Gazebo simulation environment. The general beaviour will be: you have a user interface, created with a Jupyter notebook with which you can directly interact to the robot making it moves and stops by pressing the start and the stop button, you can control the robot linear and angular velocity trough the sliders, you can directly teleoperate the robot using four buttons with the different direnction and in the meanwhile you can check the behavior of the robot trought graphs about the given and the real velocity, about how many targets have been reached or cancelled, about the time required to reach a target and about the position and orientation in the space.</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>Nodes</title>
+<para>We have three nodes in total and a Jupyter notebook:<orderedlist>
+<listitem><para><ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/src/position_service.cpp"><bold>position_service</bold></ulink>: this node is contained in the src folder and it implements a service, it waits for a request from a client and replies with a position x and y and the orientation theta. This is a c++ node.</para>
+</listitem><listitem><para><ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/src/state_machine.cpp"><bold>state_machine</bold></ulink>: this node is contained in the src folder and it represents a finite state machine which has only two states that are when the robot starts and when the robot stops. This node may call the position server and after called the position server, so after it receives the target x y and theta position, it will call the navigation service. It also implement a service for interacting with the user interface. In this node an action client has been implemented. This is a c++ node.</para>
+</listitem><listitem><para><ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/scripts/go_to_point.py"><bold>go_to_point</bold></ulink>: this node is contained in the script folder and it implements a service to drive a robot toward a point in the environment. It also waits for a client to call the service, the client will send the x, the y and the theta and it will drive the robot towards the required x, y and theta. This node directly interacts with the simulation, indeed it subscribes with the odometry of the robot and it publishes on the cmd_vel of the robot. In this node an action server has been implemented. In this way, since actions are not atomic, we can for instance solve the problem related to the fact that when we ask to the robot to stop, this can be done immediately, indeed with actions we are able to cancel goals. This is a python node.</para>
+</listitem><listitem><para><ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/notebook/user_interface.ipybn"><bold>user_interface</bold></ulink>: this node implementedy via Jupyter notebook allows you to directly interact with the robot and also displaying graphs of its behavior.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>Custom services in the srv folder</title>
+<para><orderedlist>
+<listitem><para><ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/srv/RandomPosition.srv"><bold>RandomPosition</bold></ulink>: it expects a x_max, x_min, y_max and y_min and replies with an x, y and theta. This is the service message used by the random position service.</para>
+</listitem><listitem><para><ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/srv/Position.srv"><bold>Position</bold></ulink>: it is the message sent to the <ref refid="namespacego__to__point" kindref="compound">go_to_point</ref> service.</para>
+</listitem><listitem><para><ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/srv/Command.srv"><bold>Command</bold></ulink>: it is just a string command which will be start or stop.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Action</title>
+<para>In the action folder we can find the <ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/action/Target.action"><bold>Target</bold></ulink> action. In this file we have the goal definition which corresponds to the x, y and theta of the target to reach, then we have the result which is a simple boolean value and finally we have the feedback that consists of a string about the status of that action.</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md5">
+<title>Urdf folder</title>
+<para>This folder contains a file in which you find the description of the robot that will be spawned in the Gazebo simulation environemnt.</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md6">
+<title>Launch file</title>
+<para>There is only one launch file whcih is the <ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/launch/sim.launch"><bold>notebook.launch</bold></ulink> that will just spawn the robot in the Gazebo simulator and then it launches all the four nodes.</para>
+</sect2>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md7">
+<title>Required packages</title>
+<para>For this simulation you need the <bold>Actionlib</bold> package.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md8">
+<title>How to run the code</title>
+<para>In order to run the gazebo simulation you have first to open the terminal and source it as a ROS environment, then you need to run the roscore, and then run the launch file: <programlisting><codeline><highlight class="normal">roslaunch<sp/>rt2_assignment1<sp/>notebook.launch</highlight></codeline>
+</programlisting></para>
+<para>Then to control the robot, in another terminal you have to type: <programlisting><codeline><highlight class="normal">jupyter<sp/>notebook<sp/>--allow-root<sp/>--ip<sp/>0.0.0.0</highlight></codeline>
+</programlisting></para>
+<para>Open the <bold>user_interface.ipybn</bold> in the <ulink url="https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/notebook"><bold>notebook</bold></ulink> folder and start to interact with the robot. All the explanation are inside the <bold>user_interface.ipybn</bold> file. </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

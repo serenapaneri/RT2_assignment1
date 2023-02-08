@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Second<sp/>Assignment<sp/>of<sp/>the<sp/>Research<sp/>Track<sp/>2<sp/>course<sp/>(Robotics<sp/>Engineering<sp/>/<sp/>JEMARO,<sp/>Unige)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>General<sp/>information</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>ROS<sp/>package<sp/>contains<sp/>three<sp/>nodes,<sp/>the<sp/>simulation<sp/>environment<sp/>and<sp/>the<sp/>jupyter<sp/>notebbok<sp/>for<sp/>controlling<sp/>a<sp/>mobile<sp/>robot<sp/>in<sp/>a<sp/>Gazebo<sp/>simulation<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>general<sp/>beaviour<sp/>will<sp/>be:<sp/>you<sp/>have<sp/>a<sp/>user<sp/>interface,<sp/>created<sp/>with<sp/>a<sp/>Jupyter<sp/>notebook<sp/>with<sp/>which<sp/>you<sp/>can<sp/>directly<sp/>interact<sp/>to<sp/>the<sp/>robot<sp/>making<sp/>it<sp/>moves<sp/>and<sp/>stops<sp/>by<sp/>pressing<sp/>the<sp/>start<sp/>and<sp/>the<sp/>stop<sp/>button,<sp/>you<sp/>can<sp/>control<sp/>the<sp/>robot<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>trough<sp/>the<sp/>sliders,<sp/>you<sp/>can<sp/>directly<sp/>teleoperate<sp/>the<sp/>robot<sp/>using<sp/>four<sp/>buttons<sp/>with<sp/>the<sp/>different<sp/>direnction<sp/>and<sp/>in<sp/>the<sp/>meanwhile<sp/>you<sp/>can<sp/>check<sp/>the<sp/>behavior<sp/>of<sp/>the<sp/>robot<sp/>trought<sp/>graphs<sp/>about<sp/>the<sp/>given<sp/>and<sp/>the<sp/>real<sp/>velocity,<sp/>about<sp/>how<sp/>many<sp/>targets<sp/>have<sp/>been<sp/>reached<sp/>or<sp/>cancelled,<sp/>about<sp/>the<sp/>time<sp/>required<sp/>to<sp/>reach<sp/>a<sp/>target<sp/>and<sp/>about<sp/>the<sp/>position<sp/>and<sp/>orientation<sp/>in<sp/>the<sp/>space.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Nodes</highlight></codeline>
+<codeline><highlight class="normal">We<sp/>have<sp/>three<sp/>nodes<sp/>in<sp/>total<sp/>and<sp/>a<sp/>Jupyter<sp/>notebook:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>[**position_service**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/src/position_service.cpp):<sp/>this<sp/>node<sp/>is<sp/>contained<sp/>in<sp/>the<sp/>src<sp/>folder<sp/>and<sp/>it<sp/>implements<sp/>a<sp/>service,<sp/>it<sp/>waits<sp/>for<sp/>a<sp/>request<sp/>from<sp/>a<sp/>client<sp/>and<sp/>replies<sp/>with<sp/>a<sp/>position<sp/>x<sp/>and<sp/>y<sp/>and<sp/>the<sp/>orientation<sp/>theta.<sp/>This<sp/>is<sp/>a<sp/>c++<sp/>node.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>[**state_machine**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/src/state_machine.cpp):<sp/>this<sp/>node<sp/>is<sp/>contained<sp/>in<sp/>the<sp/>src<sp/>folder<sp/>and<sp/>it<sp/>represents<sp/>a<sp/>finite<sp/>state<sp/>machine<sp/>which<sp/>has<sp/>only<sp/>two<sp/>states<sp/>that<sp/>are<sp/>when<sp/>the<sp/>robot<sp/>starts<sp/>and<sp/>when<sp/>the<sp/>robot<sp/>stops.<sp/>This<sp/>node<sp/>may<sp/>call<sp/>the<sp/>position<sp/>server<sp/>and<sp/>after<sp/>called<sp/>the<sp/>position<sp/>server,<sp/>so<sp/>after<sp/>it<sp/>receives<sp/>the<sp/>target<sp/>x<sp/>y<sp/>and<sp/>theta<sp/>position,<sp/>it<sp/>will<sp/>call<sp/>the<sp/>navigation<sp/>service.<sp/>It<sp/>also<sp/>implement<sp/>a<sp/>service<sp/>for<sp/>interacting<sp/>with<sp/>the<sp/>user<sp/>interface.<sp/>In<sp/>this<sp/>node<sp/>an<sp/>action<sp/>client<sp/>has<sp/>been<sp/>implemented.<sp/>This<sp/>is<sp/>a<sp/>c++<sp/>node.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>[**go_to_point**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/scripts/go_to_point.py):<sp/>this<sp/>node<sp/>is<sp/>contained<sp/>in<sp/>the<sp/>script<sp/>folder<sp/>and<sp/>it<sp/>implements<sp/>a<sp/>service<sp/>to<sp/>drive<sp/>a<sp/>robot<sp/>toward<sp/>a<sp/>point<sp/>in<sp/>the<sp/>environment.<sp/>It<sp/>also<sp/>waits<sp/>for<sp/>a<sp/>client<sp/>to<sp/>call<sp/>the<sp/>service,<sp/>the<sp/>client<sp/>will<sp/>send<sp/>the<sp/>x,<sp/>the<sp/>y<sp/>and<sp/>the<sp/>theta<sp/>and<sp/>it<sp/>will<sp/>drive<sp/>the<sp/>robot<sp/>towards<sp/>the<sp/>required<sp/>x,<sp/>y<sp/>and<sp/>theta.<sp/>This<sp/>node<sp/>directly<sp/>interacts<sp/>with<sp/>the<sp/>simulation,<sp/>indeed<sp/>it<sp/>subscribes<sp/>with<sp/>the<sp/>odometry<sp/>of<sp/>the<sp/>robot<sp/>and<sp/>it<sp/>publishes<sp/>on<sp/>the<sp/>cmd_vel<sp/>of<sp/>the<sp/>robot.<sp/>In<sp/>this<sp/>node<sp/>an<sp/>action<sp/>server<sp/>has<sp/>been<sp/>implemented.<sp/>In<sp/>this<sp/>way,<sp/>since<sp/>actions<sp/>are<sp/>not<sp/>atomic,<sp/>we<sp/>can<sp/>for<sp/>instance<sp/>solve<sp/>the<sp/>problem<sp/>related<sp/>to<sp/>the<sp/>fact<sp/>that<sp/>when<sp/>we<sp/>ask<sp/>to<sp/>the<sp/>robot<sp/>to<sp/>stop,<sp/>this<sp/>can<sp/>be<sp/>done<sp/>immediately,<sp/>indeed<sp/>with<sp/>actions<sp/>we<sp/>are<sp/>able<sp/>to<sp/>cancel<sp/>goals.<sp/>This<sp/>is<sp/>a<sp/>python<sp/>node.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>[**user_interface**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/notebook/user_interface.ipybn):<sp/>this<sp/>node<sp/>implementedy<sp/>via<sp/>Jupyter<sp/>notebook<sp/>allows<sp/>you<sp/>to<sp/>directly<sp/>interact<sp/>with<sp/>the<sp/>robot<sp/>and<sp/>also<sp/>displaying<sp/>graphs<sp/>of<sp/>its<sp/>behavior.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Custom<sp/>services<sp/>in<sp/>the<sp/>srv<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>[**RandomPosition**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/srv/RandomPosition.srv):<sp/>it<sp/>expects<sp/>a<sp/>x_max,<sp/>x_min,<sp/>y_max<sp/>and<sp/>y_min<sp/>and<sp/>replies<sp/>with<sp/>an<sp/>x,<sp/>y<sp/>and<sp/>theta.<sp/>This<sp/>is<sp/>the<sp/>service<sp/>message<sp/>used<sp/>by<sp/>the<sp/>random<sp/>position<sp/>service.<sp/></highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>[**Position**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/srv/Position.srv):<sp/>it<sp/>is<sp/>the<sp/>message<sp/>sent<sp/>to<sp/>the<sp/>go_to_point<sp/>service.<sp/></highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>[**Command**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/srv/Command.srv):<sp/>it<sp/>is<sp/>just<sp/>a<sp/>string<sp/>command<sp/>which<sp/>will<sp/>be<sp/>start<sp/>or<sp/>stop.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Action</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>action<sp/>folder<sp/>we<sp/>can<sp/>find<sp/>the<sp/>[**Target**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/action/Target.action)<sp/>action.<sp/>In<sp/>this<sp/>file<sp/>we<sp/>have<sp/>the<sp/>goal<sp/>definition<sp/>which<sp/>corresponds<sp/>to<sp/>the<sp/>x,<sp/>y<sp/>and<sp/>theta<sp/>of<sp/>the<sp/>target<sp/>to<sp/>reach,<sp/>then<sp/>we<sp/>have<sp/>the<sp/>result<sp/>which<sp/>is<sp/>a<sp/>simple<sp/>boolean<sp/>value<sp/>and<sp/>finally<sp/>we<sp/>have<sp/>the<sp/>feedback<sp/>that<sp/>consists<sp/>of<sp/>a<sp/>string<sp/>about<sp/>the<sp/>status<sp/>of<sp/>that<sp/>action.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Urdf<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>folder<sp/>contains<sp/>a<sp/>file<sp/>in<sp/>which<sp/>you<sp/>find<sp/>the<sp/>description<sp/>of<sp/>the<sp/>robot<sp/>that<sp/>will<sp/>be<sp/>spawned<sp/>in<sp/>the<sp/>Gazebo<sp/>simulation<sp/>environemnt.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Launch<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">There<sp/>is<sp/>only<sp/>one<sp/>launch<sp/>file<sp/>whcih<sp/>is<sp/>the<sp/>[**notebook.launch**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/launch/sim.launch)<sp/>that<sp/>will<sp/>just<sp/>spawn<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>Gazebo<sp/>simulator<sp/>and<sp/>then<sp/>it<sp/>launches<sp/>all<sp/>the<sp/>four<sp/>nodes.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Required<sp/>packages</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>this<sp/>simulation<sp/>you<sp/>need<sp/>the<sp/>**Actionlib**<sp/>package.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>How<sp/>to<sp/>run<sp/>the<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>run<sp/>the<sp/>gazebo<sp/>simulation<sp/>you<sp/>have<sp/>first<sp/>to<sp/>open<sp/>the<sp/>terminal<sp/>and<sp/>source<sp/>it<sp/>as<sp/>a<sp/>ROS<sp/>environment,<sp/>then<sp/>you<sp/>need<sp/>to<sp/>run<sp/>the<sp/>roscore,<sp/>and<sp/>then<sp/>run<sp/>the<sp/>launch<sp/>file:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt2_assignment1<sp/>notebook.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Then<sp/>to<sp/>control<sp/>the<sp/>robot,<sp/>in<sp/>another<sp/>terminal<sp/>you<sp/>have<sp/>to<sp/>type:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">jupyter<sp/>notebook<sp/>--allow-root<sp/>--ip<sp/>0.0.0.0</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Open<sp/>the<sp/>**user_interface.ipybn**<sp/>in<sp/>the<sp/>[**notebook**](https://github.com/serenapaneri/rt2_assignment1/blob/doxygen/notebook)<sp/>folder<sp/>and<sp/>start<sp/>to<sp/>interact<sp/>with<sp/>the<sp/>robot.<sp/></highlight></codeline>
+<codeline><highlight class="normal">All<sp/>the<sp/>explanation<sp/>are<sp/>inside<sp/>the<sp/>**user_interface.ipybn**<sp/>file.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>
