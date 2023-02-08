@@ -184,10 +184,14 @@ def go_to_point(goal):
             act_s.publish_feedback(feedback)
             fix_yaw(desired_position)
         elif state_ == 1:
-            feedback.stat = "Angle aligned"
+            feedback.stat = "Go straight ahead"
             act_s.publish_feedback(feedback)
             go_straight_ahead(desired_position)
         elif state_ == 2:
+            feedback.stat = "Angle aligned"
+            act_s.publish_feedback(feedback)
+            fix_final_yaw(des_yaw)
+        elif state_ == 3:
             feedback.stat = "Target reached!"
             act_s.publish_feedback(feedback)
             done()

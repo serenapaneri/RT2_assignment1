@@ -34,6 +34,7 @@ For this simulation you need the **Actionlib** package.
 
 ## How to run the code
 In order to run the gazebo simulation you have first to open the terminal and source it as a ROS environment, then you need to run the roscore, and then run the launch file:
+
 ```
 roslaunch rt2_assignment1 sim.launch
 ```
