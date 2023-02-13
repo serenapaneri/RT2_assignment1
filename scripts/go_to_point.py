@@ -4,6 +4,7 @@
 .. module:: go_to_point
     :platform: Unix
     :synopsis: This node drives the robot toward the random position and orientation in the environment.
+    
 .. moduleauthor:: Serena Paneri
 
 This node implements an action server and its objective is to make the robot reach the given
@@ -12,17 +13,11 @@ it provides more functionalities, including the possibility of recieving feedbac
 possibility to cancel a goal and make the robot stops immediately and not only after it has achieved 
 the target position.
 
-Subscribes to:
-    /odom
-
 Publishes to:
     /cmd_vel
-    
-Service:
-    None
-    
-Client:
-    None
+
+Subscribes to:
+    /odom
 
 Action server: 
      /go_to_point
@@ -39,29 +34,22 @@ from rt2_assignment1.srv import Position
 import math
 
 
-"""robot state variables
-"""
+"""robot state variables"""
 position_ = Point()
 yaw_ = 0
 position_ = 0
 state_ = 0
 
-"""publisher used for cmd_vel
-"""
+"""publisher used for cmd_vel"""
 pub_ = None
 
-"""action server
-"""
+"""action server"""
 act_s = None
 
-"""parameters for control
-"""
-yaw_precision_ = math.pi / 9
-"""+/- 20 degree allowed
-"""  
-yaw_precision_2_ = math.pi / 90
-"""+/- 2 degree allowed
-""" 
+"""parameters for control"""
+yaw_precision_ = math.pi / 9 # +/- 20 degree allowed
+yaw_precision_2_ = math.pi / 90 # +/- 2 degree allowed
+
 
 dist_precision_ = 0.1
 kp_a = -3.0 
@@ -73,14 +61,14 @@ ub_d = 0.6
 
 def clbk_odom(msg):
     """
-    This is the callback function that is used to know the actual position and orientation of
-    the robot in the space exploiting the topic /odom.
+        This is the callback function that is used to know the actual position and orientation of
+        the robot in the space exploiting the topic /odom.
     
-    Args :
-        msg(Odometry) : odom message
+        Args:
+            msg(nav_msgs.msg/Odometry): odom message
     
-    Returns : 
-        None
+        Returns: 
+            None
     """
 
     global position_
@@ -101,14 +89,14 @@ def clbk_odom(msg):
 
 def change_state(state):
     """
-    This function allows to switch between the different states in which the robot could be during
-    the execution of its behavior to reach the desired point in the space.
+        This function allows to switch between the different states in which the robot could be during
+        the execution of its behavior to reach the desired point in the space.
     
-    Args :
-        state(Int): state of the robot
+        Args:
+            state(int): state of the robot
     
-    Returns : 
-        None
+        Returns: 
+            None
     """
     global state_
     state_ = state
@@ -117,13 +105,13 @@ def change_state(state):
 
 def normalize_angle(angle):
     """
-    This function is used to normalized the angle.
-    
-    Args :
-        angle(Float): angle to be normalized
+        This function is used to normalized the angle.
+
+        Args:
+            angle(float): angle to be normalized
         
-    Returns : 
-        angle(Float): normalized angle
+        Returns: 
+            angle(float): normalized angle
     """
     if(math.fabs(angle) > math.pi):
         angle = angle - (2 * math.pi * angle) / (math.fabs(angle))
@@ -132,14 +120,14 @@ def normalize_angle(angle):
     
 def fix_yaw(des_pos):
     """
-    This function is used to adjust the yaw angle of the robot in a way that it is directly
-    aligned with the target position to be reached.
+        This function is used to adjust the yaw angle of the robot in a way that it is directly
+        aligned with the target position to be reached.
     
-    Args :
-        des_pos(Point): desired position to be achieved by the robot
+        Args:
+            des_pos(geometry_msgs/Point): desired position to be achieved by the robot
     
-    Returns : 
-        None
+        Returns : 
+            None
     """
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = normalize_angle(desired_yaw - yaw_)
@@ -160,13 +148,13 @@ def fix_yaw(des_pos):
 
 def go_straight_ahead(des_pos):
     """
-    This function allows the robot to move straight to reach the goal position.
+        This function allows the robot to move straight to reach the goal position.
     
-    Args :
-        des_pos(Point): desired position to be achieved by the robot
+        Args:
+            des_pos(geometry_msgsPoint): desired position to be achieved by the robot
         
-    Returns : 
-        None
+        Returns: 
+            None
     """
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = desired_yaw - yaw_
@@ -195,13 +183,13 @@ def go_straight_ahead(des_pos):
 
 def fix_final_yaw(des_yaw):
     """
-    This function allows the robot to adjust the yaw angle in order to achieve the goal orientation.
+        This function allows the robot to adjust the yaw angle in order to achieve the goal orientation.
     
-    Args :
-        des_yaw(Point): desired yaw angle to be achieved by the robot
+        Args:
+            des_yaw(float): desired yaw angle to be achieved by the robot
     
-    Returns : 
-        None
+        Returns: 
+            None
     """
     err_yaw = normalize_angle(des_yaw - yaw_)
     rospy.loginfo(err_yaw)
@@ -221,13 +209,13 @@ def fix_final_yaw(des_yaw):
         
 def done():
     """
-    This function is used to stop the robot behavior by zeroing both linear and angular velocities.
-    
-    Args :
-        None
-        
-    Returns : 
-        None
+        This function is used to stop the robot behavior by zeroing both linear and angular velocities.
+
+        Args:
+            None
+
+        Returns: 
+            None
     """
     twist_msg = Twist()
     twist_msg.linear.x = 0
@@ -237,14 +225,14 @@ def done():
     
 def go_to_point(goal):
     """
-    This function is used to regulate the different states in which the robot could be in a way to make it
-    achieve the correct behavior to be followed in order to reach the goal.
+        This function is used to regulate the different states in which the robot could be in a way to make it
+        achieve the correct behavior to be followed in order to reach the goal.
     
-    Args :
-       goal(Point): desired goal in the environment to be achieved
+        Args:
+           goal(TargetActionGoal): desired goal in the environment to be achieved
     
-    Returns : 
-        None
+        Returns: 
+            None
     """
     desired_position = Point()
     desired_position.x = goal.x
@@ -295,15 +283,9 @@ def go_to_point(goal):
 
 def main():
     """
-    This is the main function of the node in which we initialize the node. Moreover here 
-    are implemented and a publisher to the /cmd_vel topic, a subscriber to the /odom topic
-    and an action server to the /go_to_point topic.
-    
-    Args :
-        None
-    
-    Returns : 
-        None    
+        This is the main function of the node in which we initialize the node. Moreover here 
+        are implemented and a publisher to the /cmd_vel topic, a subscriber to the /odom topic
+        and an action server to the /go_to_point topic.
     """
     global pub_, act_s
     rospy.init_node('go_to_point')

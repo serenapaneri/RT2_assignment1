@@ -97,7 +97,7 @@
 <parametername>res</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>it is the response to the client </para>
+<para>it is the response to the client</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -107,7 +107,7 @@ This function contains the request made by the user in the user_interface to mak
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/state_machine.cpp" line="61" column="6" bodyfile="src/state_machine.cpp" bodystart="61" bodyend="69"/>
+        <location file="src/state_machine.cpp" line="62" column="6" bodyfile="src/state_machine.cpp" bodystart="62" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="state__machine_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -126,23 +126,12 @@ This function contains the request made by the user in the user_interface to mak
 <para>Main function of the node state_machine. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>None</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>0</para>
-</simplesect>
-This is the main function of the node state_machine where the node is initialized. Moreover the service to start the behavior of the robot is implemented, the client of <linebreak/>
+<para>This is the main function of the node state_machine where the node is initialized. Moreover the service to start the behavior of the robot is implemented, the client of <linebreak/>
  the position service to retrieve the goal position and orientation, an action client to make the robot move toward the target and a publisher that advertise if the robot reaches or not the goal in the environment. Moverover it menages the two different states in which the robot could be. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/state_machine.cpp" line="84" column="5" bodyfile="src/state_machine.cpp" bodystart="84" bodyend="140"/>
+        <location file="src/state_machine.cpp" line="83" column="5" bodyfile="src/state_machine.cpp" bodystart="83" bodyend="139"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -181,73 +170,73 @@ Subscribes to: <linebreak/>
 <codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>start<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>start<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="state__machine_8cpp_1a1a9543636935547580c0657f4c7c0c2b" kindref="member">user_interface</ref>(rt2_assignment1::Command::Request<sp/>&amp;req,<sp/>rt2_assignment1::Command::Response<sp/>&amp;res){</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(req.command<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;start&quot;</highlight><highlight class="normal">){</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="state__machine_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)</highlight></codeline>
-<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;state_machine&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/>ros::NodeHandle<sp/>n;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/>ros::ServiceServer<sp/>service=<sp/>n.advertiseService(</highlight><highlight class="stringliteral">&quot;/user_interface&quot;</highlight><highlight class="normal">,<sp/><ref refid="state__machine_8cpp_1a1a9543636935547580c0657f4c7c0c2b" kindref="member">user_interface</ref>);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/>ros::ServiceClient<sp/>client_rp<sp/>=<sp/>n.serviceClient&lt;rt2_assignment1::RandomPosition&gt;(</highlight><highlight class="stringliteral">&quot;/position_server&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/>ros::Publisher<sp/>target_pub<sp/>=<sp/>n.advertise&lt;std_msgs::Int32&gt;(</highlight><highlight class="stringliteral">&quot;robot_target&quot;</highlight><highlight class="normal">,<sp/>1000);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>action<sp/>server<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/>actionlib::SimpleActionClient&lt;rt2_assignment1::TargetAction&gt;<sp/>act_c(</highlight><highlight class="stringliteral">&quot;go_to_point&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>wait<sp/>for<sp/>the<sp/>action<sp/>server<sp/>to<sp/>come<sp/>up<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(!act_c.waitForServer(ros::Duration(5.0))){</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>the<sp/>action<sp/>server<sp/>to<sp/>come<sp/>up&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/>std_msgs::Int32<sp/>trg;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>making<sp/>a<sp/>request<sp/>to<sp/>the<sp/>position_server<sp/>setting<sp/>limits<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/>rt2_assignment1::RandomPosition<sp/>rp;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/>rp.request.x_max<sp/>=<sp/>5.0;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/>rp.request.x_min<sp/>=<sp/>-5.0;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/>rp.request.y_max<sp/>=<sp/>5.0;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/>rp.request.y_min<sp/>=<sp/>-5.0;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(ros::ok()){</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(start){</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>calling<sp/>the<sp/>position_server<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client_rp.call(rp);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt2_assignment1::TargetGoal<sp/>goal;</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.x<sp/>=<sp/>rp.response.x;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.y<sp/>=<sp/>rp.response.y;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.theta<sp/>=<sp/>rp.response.theta;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>sending<sp/>the<sp/>x<sp/>and<sp/>y<sp/>position<sp/>and<sp/>theta<sp/>to<sp/>the<sp/>action<sp/>server<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>act_c.sendGoal(goal);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\nGoing<sp/>to<sp/>the<sp/>position:<sp/>x=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>goal.x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>y=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>goal.y<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>theta<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>goal.theta<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>act_c.waitForResult();</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>checking<sp/>if<sp/>the<sp/>goal<sp/>has<sp/>been<sp/>reached<sp/>or<sp/>not<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(act_c.getState()<sp/>==<sp/>actionlib::SimpleClientGoalState::SUCCEEDED){</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trg.data<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_pub.publish(trg);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Hooray,<sp/>target<sp/>reached!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trg.data<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_pub.publish(trg);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;The<sp/>base<sp/>failed<sp/>to<sp/>reach<sp/>the<sp/>target<sp/>for<sp/>some<sp/>reason&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="state__machine_8cpp_1a1a9543636935547580c0657f4c7c0c2b" kindref="member">user_interface</ref>(rt2_assignment1::Command::Request<sp/>&amp;req,<sp/>rt2_assignment1::Command::Response<sp/>&amp;res){</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(req.command<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;start&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="state__machine_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;state_machine&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/>ros::NodeHandle<sp/>n;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/>ros::ServiceServer<sp/>service=<sp/>n.advertiseService(</highlight><highlight class="stringliteral">&quot;/user_interface&quot;</highlight><highlight class="normal">,<sp/><ref refid="state__machine_8cpp_1a1a9543636935547580c0657f4c7c0c2b" kindref="member">user_interface</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/>ros::ServiceClient<sp/>client_rp<sp/>=<sp/>n.serviceClient&lt;rt2_assignment1::RandomPosition&gt;(</highlight><highlight class="stringliteral">&quot;/position_server&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/>ros::Publisher<sp/>target_pub<sp/>=<sp/>n.advertise&lt;std_msgs::Int32&gt;(</highlight><highlight class="stringliteral">&quot;robot_target&quot;</highlight><highlight class="normal">,<sp/>1000);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>action<sp/>server<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/>actionlib::SimpleActionClient&lt;rt2_assignment1::TargetAction&gt;<sp/>act_c(</highlight><highlight class="stringliteral">&quot;go_to_point&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>for<sp/>the<sp/>action<sp/>server<sp/>to<sp/>come<sp/>up<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(!act_c.waitForServer(ros::Duration(5.0))){</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Waiting<sp/>for<sp/>the<sp/>action<sp/>server<sp/>to<sp/>come<sp/>up&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/>std_msgs::Int32<sp/>trg;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>making<sp/>a<sp/>request<sp/>to<sp/>the<sp/>position_server<sp/>setting<sp/>limits<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/>rt2_assignment1::RandomPosition<sp/>rp;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/>rp.request.x_max<sp/>=<sp/>5.0;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/>rp.request.x_min<sp/>=<sp/>-5.0;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/>rp.request.y_max<sp/>=<sp/>5.0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/>rp.request.y_min<sp/>=<sp/>-5.0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(ros::ok()){</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(start){</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>calling<sp/>the<sp/>position_server<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>client_rp.call(rp);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rt2_assignment1::TargetGoal<sp/>goal;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.x<sp/>=<sp/>rp.response.x;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.y<sp/>=<sp/>rp.response.y;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goal.theta<sp/>=<sp/>rp.response.theta;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sending<sp/>the<sp/>x<sp/>and<sp/>y<sp/>position<sp/>and<sp/>theta<sp/>to<sp/>the<sp/>action<sp/>server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>act_c.sendGoal(goal);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\nGoing<sp/>to<sp/>the<sp/>position:<sp/>x=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>goal.x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>y=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>goal.y<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>theta<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>goal.theta<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>act_c.waitForResult();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>checking<sp/>if<sp/>the<sp/>goal<sp/>has<sp/>been<sp/>reached<sp/>or<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(act_c.getState()<sp/>==<sp/>actionlib::SimpleClientGoalState::SUCCEEDED){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trg.data<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_pub.publish(trg);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;Hooray,<sp/>target<sp/>reached!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trg.data<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>target_pub.publish(trg);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_INFO(</highlight><highlight class="stringliteral">&quot;The<sp/>base<sp/>failed<sp/>to<sp/>reach<sp/>the<sp/>target<sp/>for<sp/>some<sp/>reason&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="src/state_machine.cpp"/>
   </compounddef>

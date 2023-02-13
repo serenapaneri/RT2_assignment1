@@ -34,7 +34,7 @@
 * After achieving the goal position the state machine will make again the same request as
 * before until the user manually stops the behavior of the robot by exploiting again the
 * user_interface.
-*/
+**/
 
 
 #include "ros/ros.h"
@@ -49,10 +49,11 @@
 bool start = false;
 
 /**
-* \brief Callback function of /user_interface topic
-* \param req: it is the request done by the service
-* \param res: it is the response to the client
-* \return true
+* @brief Callback function of /user_interface topic
+* @param req: it is the request done by the service
+* @param res: it is the response to the client
+*
+* @return true
 *
 * This function contains the request made by the user in the user_interface to make 
 * the robot move.
@@ -69,9 +70,7 @@ bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Com
 }
 
 /**
-* \brief Main function of the node state_machine
-* \param None
-* \return 0
+* @brief Main function of the node state_machine
 *
 * This is the main function of the node state_machine where the node is initialized. 
 * Moreover the service to start the behavior of the robot is implemented, the client of  
@@ -89,17 +88,17 @@ int main(int argc, char **argv)
    ros::ServiceClient client_rp = n.serviceClient<rt2_assignment1::RandomPosition>("/position_server");
    ros::Publisher target_pub = n.advertise<std_msgs::Int32>("robot_target", 1000);
    
-   /* action server */
+   // action server 
    actionlib::SimpleActionClient<rt2_assignment1::TargetAction> act_c("go_to_point", true);
 
-   /* wait for the action server to come up */
+   // wait for the action server to come up 
    while(!act_c.waitForServer(ros::Duration(5.0))){
      ROS_INFO("Waiting for the action server to come up");
    }   
    
    std_msgs::Int32 trg;
    
-   /* making a request to the position_server setting limits */
+   // making a request to the position_server setting limits 
    rt2_assignment1::RandomPosition rp;
    rp.request.x_max = 5.0;
    rp.request.x_min = -5.0;
@@ -110,20 +109,20 @@ int main(int argc, char **argv)
    while(ros::ok()){
    	ros::spinOnce();
    	if (start){
-   		/* calling the position_server */
+   		// calling the position_server 
    		client_rp.call(rp);
    		rt2_assignment1::TargetGoal goal;
    		goal.x = rp.response.x;
    		goal.y = rp.response.y;
    		goal.theta = rp.response.theta;
    		
-   		/* sending the x and y position and theta to the action server */
+   		// sending the x and y position and theta to the action server
    		act_c.sendGoal(goal);
    		std::cout << "\nGoing to the position: x= " << goal.x << " y= " << goal.y << " theta = " << goal.theta << std::endl;
    		
    		act_c.waitForResult();
    		
-   		/* checking if the goal has been reached or not */
+   		// checking if the goal has been reached or not
                if(act_c.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
                   trg.data = 1;
                   target_pub.publish(trg);

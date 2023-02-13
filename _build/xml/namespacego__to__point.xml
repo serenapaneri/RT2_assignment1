@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="44" column="1" bodyfile="scripts/go_to_point.py" bodystart="44" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="38" column="1" bodyfile="scripts/go_to_point.py" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1ae444f19eb2019982432760ace036ce03" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="45" column="1" bodyfile="scripts/go_to_point.py" bodystart="45" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="39" column="1" bodyfile="scripts/go_to_point.py" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1aa2d0ef255bcf5d5faf9ca2764730fb17" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="47" column="1" bodyfile="scripts/go_to_point.py" bodystart="47" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="41" column="1" bodyfile="scripts/go_to_point.py" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a57b4090d0abcbcf0bfa2bcb9329d3036" prot="public" static="no" mutable="no">
         <type></type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="51" column="1" bodyfile="scripts/go_to_point.py" bodystart="51" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="44" column="1" bodyfile="scripts/go_to_point.py" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a64583fad586a7212c40613ec1c3e7c69" prot="public" static="no" mutable="no">
         <type></type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="55" column="1" bodyfile="scripts/go_to_point.py" bodystart="55" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="47" column="1" bodyfile="scripts/go_to_point.py" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a67f95834f0959feb3facd17bc7fa2b38" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="59" column="1" bodyfile="scripts/go_to_point.py" bodystart="59" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="50" column="1" bodyfile="scripts/go_to_point.py" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1af74ccf49164d0478ca8343e2031d5813" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="62" column="1" bodyfile="scripts/go_to_point.py" bodystart="62" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="51" column="1" bodyfile="scripts/go_to_point.py" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a6a1e4eb20ebd4fce0fc56b0ebfd7a8d5" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="66" column="1" bodyfile="scripts/go_to_point.py" bodystart="66" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="54" column="1" bodyfile="scripts/go_to_point.py" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a524106fc7667a0927951dfd89d52d6a7" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="67" column="1" bodyfile="scripts/go_to_point.py" bodystart="67" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="55" column="1" bodyfile="scripts/go_to_point.py" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a7bc498652ca66932e704e738b50c297b" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="68" column="1" bodyfile="scripts/go_to_point.py" bodystart="68" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="56" column="1" bodyfile="scripts/go_to_point.py" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1acb4e14986fafe5cb73bb8ad0c178869d" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -155,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="69" column="1" bodyfile="scripts/go_to_point.py" bodystart="69" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="57" column="1" bodyfile="scripts/go_to_point.py" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1afecad4058844db05d8321199e25b4498" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="70" column="1" bodyfile="scripts/go_to_point.py" bodystart="70" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="58" column="1" bodyfile="scripts/go_to_point.py" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a16c473b9e717200c483d18e66b48152a" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="71" column="1" bodyfile="scripts/go_to_point.py" bodystart="71" bodyend="-1"/>
+        <location file="scripts/go_to_point.py" line="59" column="1" bodyfile="scripts/go_to_point.py" bodystart="59" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -199,19 +199,19 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This is the callback function that is used to know the actual position and orientation of
-the robot in the space exploiting the topic /odom.
+<para><verbatim>    This is the callback function that is used to know the actual position and orientation of
+    the robot in the space exploiting the topic /odom.
 
-Args :
-    msg(Odometry) : odom message
+    Args:
+        msg(nav_msgs.msg/Odometry): odom message
 
-Returns : 
-    None
+    Returns: 
+        None
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="74" column="1" bodyfile="scripts/go_to_point.py" bodystart="74" bodyend="101"/>
+        <location file="scripts/go_to_point.py" line="62" column="1" bodyfile="scripts/go_to_point.py" bodystart="62" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1a31ee48e5cae36821049b572a96b7c8be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -225,19 +225,19 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This function allows to switch between the different states in which the robot could be during
-the execution of its behavior to reach the desired point in the space.
+<para><verbatim>    This function allows to switch between the different states in which the robot could be during
+    the execution of its behavior to reach the desired point in the space.
 
-Args :
-    state(Int): state of the robot
+    Args:
+        state(int): state of the robot
 
-Returns : 
-    None
+    Returns: 
+        None
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="102" column="1" bodyfile="scripts/go_to_point.py" bodystart="102" bodyend="117"/>
+        <location file="scripts/go_to_point.py" line="90" column="1" bodyfile="scripts/go_to_point.py" bodystart="90" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1ac688bb56fa84763ea2edefc30cae032a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -251,18 +251,18 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This function is used to normalized the angle.
+<para><verbatim>    This function is used to normalized the angle.
 
-Args :
-    angle(Float): angle to be normalized
+    Args:
+        angle(float): angle to be normalized
     
-Returns : 
-    angle(Float): normalized angle
+    Returns: 
+        angle(float): normalized angle
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="118" column="1" bodyfile="scripts/go_to_point.py" bodystart="118" bodyend="132"/>
+        <location file="scripts/go_to_point.py" line="106" column="1" bodyfile="scripts/go_to_point.py" bodystart="106" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1a9c3011a3065fcbefcc1c5ad8c9979669" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -276,19 +276,19 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This function is used to adjust the yaw angle of the robot in a way that it is directly
-aligned with the target position to be reached.
+<para><verbatim>    This function is used to adjust the yaw angle of the robot in a way that it is directly
+    aligned with the target position to be reached.
 
-Args :
-    des_pos(Point): desired position to be achieved by the robot
+    Args:
+        des_pos(geometry_msgs/Point): desired position to be achieved by the robot
 
-Returns : 
-    None
+    Returns : 
+        None
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="133" column="1" bodyfile="scripts/go_to_point.py" bodystart="133" bodyend="160"/>
+        <location file="scripts/go_to_point.py" line="121" column="1" bodyfile="scripts/go_to_point.py" bodystart="121" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1ac8579665c0fbf665f734476554fac37d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -302,18 +302,18 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This function allows the robot to move straight to reach the goal position.
+<para><verbatim>    This function allows the robot to move straight to reach the goal position.
 
-Args :
-    des_pos(Point): desired position to be achieved by the robot
+    Args:
+        des_pos(geometry_msgsPoint): desired position to be achieved by the robot
     
-Returns : 
-    None
+    Returns: 
+        None
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="161" column="1" bodyfile="scripts/go_to_point.py" bodystart="161" bodyend="195"/>
+        <location file="scripts/go_to_point.py" line="149" column="1" bodyfile="scripts/go_to_point.py" bodystart="149" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1a4a406386ca62830c19c93949e923f7bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -327,18 +327,18 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This function allows the robot to adjust the yaw angle in order to achieve the goal orientation.
+<para><verbatim>    This function allows the robot to adjust the yaw angle in order to achieve the goal orientation.
 
-Args :
-    des_yaw(Point): desired yaw angle to be achieved by the robot
+    Args:
+        des_yaw(float): desired yaw angle to be achieved by the robot
 
-Returns : 
-    None
+    Returns: 
+        None
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="196" column="1" bodyfile="scripts/go_to_point.py" bodystart="196" bodyend="221"/>
+        <location file="scripts/go_to_point.py" line="184" column="1" bodyfile="scripts/go_to_point.py" bodystart="184" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1ac2587220a4ac9c845bc9c5b0b45d5835" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -348,18 +348,18 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This function is used to stop the robot behavior by zeroing both linear and angular velocities.
+<para><verbatim>    This function is used to stop the robot behavior by zeroing both linear and angular velocities.
 
-Args :
-    None
-    
-Returns : 
-    None
+    Args:
+        None
+
+    Returns: 
+        None
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="222" column="1" bodyfile="scripts/go_to_point.py" bodystart="222" bodyend="237"/>
+        <location file="scripts/go_to_point.py" line="210" column="1" bodyfile="scripts/go_to_point.py" bodystart="210" bodyend="225"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1a2203d17b7e563bee20ed4c988548df45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -373,19 +373,19 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This function is used to regulate the different states in which the robot could be in a way to make it
-achieve the correct behavior to be followed in order to reach the goal.
+<para><verbatim>    This function is used to regulate the different states in which the robot could be in a way to make it
+    achieve the correct behavior to be followed in order to reach the goal.
 
-Args :
-   goal(Point): desired goal in the environment to be achieved
+    Args:
+       goal(TargetActionGoal): desired goal in the environment to be achieved
 
-Returns : 
-    None
+    Returns: 
+        None
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="238" column="1" bodyfile="scripts/go_to_point.py" bodystart="238" bodyend="295"/>
+        <location file="scripts/go_to_point.py" line="226" column="1" bodyfile="scripts/go_to_point.py" bodystart="226" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1ab92bd6db1ec323a4d795ed6cb40aebe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -395,20 +395,14 @@ Returns :
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>This is the main function of the node in which we initialize the node. Moreover here 
-are implemented and a publisher to the /cmd_vel topic, a subscriber to the /odom topic
-and an action server to the /go_to_point topic.
-
-Args :
-    None
-
-Returns : 
-    None    
+<para><verbatim>    This is the main function of the node in which we initialize the node. Moreover here 
+    are implemented and a publisher to the /cmd_vel topic, a subscriber to the /odom topic
+    and an action server to the /go_to_point topic.
 </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="scripts/go_to_point.py" line="296" column="1" bodyfile="scripts/go_to_point.py" bodystart="296" bodyend="318"/>
+        <location file="scripts/go_to_point.py" line="284" column="1" bodyfile="scripts/go_to_point.py" bodystart="284" bodyend="300"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -417,6 +411,7 @@ Returns :
 <para><verbatim>.. module:: go_to_point
     :platform: Unix
     :synopsis: This node drives the robot toward the random position and orientation in the environment.
+    
 .. moduleauthor:: Serena Paneri
 
 This node implements an action server and its objective is to make the robot reach the given
@@ -425,17 +420,11 @@ it provides more functionalities, including the possibility of recieving feedbac
 possibility to cancel a goal and make the robot stops immediately and not only after it has achieved 
 the target position.
 
-Subscribes to:
-    /odom
-
 Publishes to:
     /cmd_vel
-    
-Service:
-    None
-    
-Client:
-    None
+
+Subscribes to:
+    /odom
 
 Action server: 
      /go_to_point

@@ -12,7 +12,8 @@ This node implements the state machine.
 {\ttfamily \#include \char`\"{}actionlib/client/simple\+\_\+action\+\_\+client.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}actionlib/client/terminal\+\_\+state.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}std\+\_\+msgs/\+Int32.\+h\char`\"{}}\newline
-Include dependency graph for state\+\_\+machine.\+cpp\+:\nopagebreak
+Include dependency graph for state\+\_\+machine.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -75,14 +76,6 @@ Description\+: ~\newline
 
 Main function of the node state\+\_\+machine. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em None} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-0
-\end{DoxyReturn}
 This is the main function of the node state\+\_\+machine where the node is initialized. Moreover the service to start the behavior of the robot is implemented, the client of ~\newline
  the position service to retrieve the goal position and orientation, an action client to make the robot move toward the target and a publisher that advertise if the robot reaches or not the goal in the environment. Moverover it menages the two different states in which the robot could be. \mbox{\Hypertarget{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}\label{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}} 
 \index{state\_machine.cpp@{state\_machine.cpp}!user\_interface@{user\_interface}}
@@ -98,7 +91,7 @@ Callback function of /user\+\_\+interface topic.
 \begin{DoxyParams}{Parameters}
 {\em req} & it is the request done by the service \\
 \hline
-{\em res} & it is the response to the client \\
+{\em res} & it is the response to the client\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

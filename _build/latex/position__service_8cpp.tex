@@ -7,7 +7,8 @@ This node generates the x,y position and the orientation theta.
 
 {\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Random\+Position.\+h\char`\"{}}\newline
-Include dependency graph for position\+\_\+service.\+cpp\+:\nopagebreak
+Include dependency graph for position\+\_\+service.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -66,14 +67,6 @@ Description\+: ~\newline
 
 Main function of the position\+\_\+service node. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em } & None \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-0
-\end{DoxyReturn}
 This is the main function of the position\+\_\+service node in which thw node is initialized and it is also implemented a service that send a randomly generated position and orientation in the simulation environment between a certain interval. \mbox{\Hypertarget{position__service_8cpp_ab65b9ff5368189ad34fe4989d50742e4}\label{position__service_8cpp_ab65b9ff5368189ad34fe4989d50742e4}} 
 \index{position\_service.cpp@{position\_service.cpp}!myrandom@{myrandom}}
 \index{myrandom@{myrandom}!position\_service.cpp@{position\_service.cpp}}
@@ -88,11 +81,11 @@ Callback function of /position\+\_\+server.
 \begin{DoxyParams}{Parameters}
 {\em req} & it is the request done by client of a target position and orientation \\
 \hline
-{\em res} & it is the response of the server providing the target position and orientation \\
+{\em res} & it is the response of the server providing the target position and orientation\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True
+true
 \end{DoxyReturn}
 This function generates the random target position and orientation to be achieved by the robot. \mbox{\Hypertarget{position__service_8cpp_a10f83119b77a8fbd085a5550955f85ff}\label{position__service_8cpp_a10f83119b77a8fbd085a5550955f85ff}} 
 \index{position\_service.cpp@{position\_service.cpp}!randMToN@{randMToN}}
@@ -108,7 +101,7 @@ function that select a random value
 \begin{DoxyParams}{Parameters}
 {\em M} & it is the lower bound of the range \\
 \hline
-{\em N} & it is the upper bound of the range \\
+{\em N} & it is the upper bound of the range\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

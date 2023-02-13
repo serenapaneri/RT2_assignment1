@@ -24,7 +24,7 @@
    <div id="projectname">rt2_assignment1
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Second Assignment of the Research Track II course</div>
+   <div id="projectbrief">Second assignment of the Research Track II course</div>
   </td>
  </tr>
  </tbody>
@@ -138,6 +138,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>ub_d</b> = 0.6</td><
 <div class="textblock"><pre class="fragment">.. module:: go_to_point
     :platform: Unix
     :synopsis: This node drives the robot toward the random position and orientation in the environment.
+    
 .. moduleauthor:: Serena Paneri
 
 This node implements an action server and its objective is to make the robot reach the given
@@ -146,17 +147,11 @@ it provides more functionalities, including the possibility of recieving feedbac
 possibility to cancel a goal and make the robot stops immediately and not only after it has achieved 
 the target position.
 
-Subscribes to:
-    /odom
-
 Publishes to:
     /cmd_vel
-    
-Service:
-    None
-    
-Client:
-    None
+
+Subscribes to:
+    /odom
 
 Action server: 
      /go_to_point
@@ -176,14 +171,14 @@ Action server:
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function allows to switch between the different states in which the robot could be during
-the execution of its behavior to reach the desired point in the space.
+<pre class="fragment">    This function allows to switch between the different states in which the robot could be during
+    the execution of its behavior to reach the desired point in the space.
 
-Args :
-    state(Int): state of the robot
+    Args:
+        state(int): state of the robot
 
-Returns : 
-    None
+    Returns: 
+        None
 </pre> 
 </div>
 </div>
@@ -202,14 +197,14 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This is the callback function that is used to know the actual position and orientation of
-the robot in the space exploiting the topic /odom.
+<pre class="fragment">    This is the callback function that is used to know the actual position and orientation of
+    the robot in the space exploiting the topic /odom.
 
-Args :
-    msg(Odometry) : odom message
+    Args:
+        msg(nav_msgs.msg/Odometry): odom message
 
-Returns : 
-    None
+    Returns: 
+        None
 </pre> 
 </div>
 </div>
@@ -227,13 +222,13 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function is used to stop the robot behavior by zeroing both linear and angular velocities.
+<pre class="fragment">    This function is used to stop the robot behavior by zeroing both linear and angular velocities.
 
-Args :
-    None
-    
-Returns : 
-    None
+    Args:
+        None
+
+    Returns: 
+        None
 </pre> 
 </div>
 </div>
@@ -252,13 +247,13 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function allows the robot to adjust the yaw angle in order to achieve the goal orientation.
+<pre class="fragment">    This function allows the robot to adjust the yaw angle in order to achieve the goal orientation.
 
-Args :
-    des_yaw(Point): desired yaw angle to be achieved by the robot
+    Args:
+        des_yaw(float): desired yaw angle to be achieved by the robot
 
-Returns : 
-    None
+    Returns: 
+        None
 </pre> 
 </div>
 </div>
@@ -277,14 +272,14 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function is used to adjust the yaw angle of the robot in a way that it is directly
-aligned with the target position to be reached.
+<pre class="fragment">    This function is used to adjust the yaw angle of the robot in a way that it is directly
+    aligned with the target position to be reached.
 
-Args :
-    des_pos(Point): desired position to be achieved by the robot
+    Args:
+        des_pos(geometry_msgs/Point): desired position to be achieved by the robot
 
-Returns : 
-    None
+    Returns : 
+        None
 </pre> 
 </div>
 </div>
@@ -303,13 +298,13 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function allows the robot to move straight to reach the goal position.
+<pre class="fragment">    This function allows the robot to move straight to reach the goal position.
 
-Args :
-    des_pos(Point): desired position to be achieved by the robot
+    Args:
+        des_pos(geometry_msgsPoint): desired position to be achieved by the robot
     
-Returns : 
-    None
+    Returns: 
+        None
 </pre> 
 </div>
 </div>
@@ -328,14 +323,14 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function is used to regulate the different states in which the robot could be in a way to make it
-achieve the correct behavior to be followed in order to reach the goal.
+<pre class="fragment">    This function is used to regulate the different states in which the robot could be in a way to make it
+    achieve the correct behavior to be followed in order to reach the goal.
 
-Args :
-   goal(Point): desired goal in the environment to be achieved
+    Args:
+       goal(TargetActionGoal): desired goal in the environment to be achieved
 
-Returns : 
-    None
+    Returns: 
+        None
 </pre> 
 </div>
 </div>
@@ -353,15 +348,9 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This is the main function of the node in which we initialize the node. Moreover here 
-are implemented and a publisher to the /cmd_vel topic, a subscriber to the /odom topic
-and an action server to the /go_to_point topic.
-
-Args :
-    None
-
-Returns : 
-    None    
+<pre class="fragment">    This is the main function of the node in which we initialize the node. Moreover here 
+    are implemented and a publisher to the /cmd_vel topic, a subscriber to the /odom topic
+    and an action server to the /go_to_point topic.
 </pre> 
 </div>
 </div>
@@ -380,13 +369,13 @@ Returns :
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">This function is used to normalized the angle.
+<pre class="fragment">    This function is used to normalized the angle.
 
-Args :
-    angle(Float): angle to be normalized
+    Args:
+        angle(float): angle to be normalized
     
-Returns : 
-    angle(Float): normalized angle
+    Returns: 
+        angle(float): normalized angle
 </pre> 
 </div>
 </div>

@@ -27,17 +27,18 @@
 * This node implements a service and its goal is to generate the x and y position in the environment
 * plus the orientation theta. These are random numbers generated within a given range, and they 
 * represent the target position that the robot is going to achive.
-*/
+**/
 
 
 #include "ros/ros.h"
 #include "rt2_assignment1/RandomPosition.h"
 
 /**
-* \brief function that select a random value
-* \param M: it is the lower bound of the range
-* \param N: it is the upper bound of the range
-* \return randMTon: it returns a random value within the range 
+* @brief function that select a random value
+* @param M: it is the lower bound of the range
+* @param N: it is the upper bound of the range
+*
+* @return randMTon: it returns a random value within the range 
 *
 * This function returns a random number within the interval [M,N].
 */ 
@@ -47,10 +48,11 @@ double randMToN(double M, double N)
 
 
 /**
-* \brief Callback function of /position_server
-* \param req: it is the request done by client of a target position and orientation
-* \param res: it is the response of the server providing the target position and orientation
-* \return True
+* @brief Callback function of /position_server
+* @param req: it is the request done by client of a target position and orientation
+* @param res: it is the response of the server providing the target position and orientation
+*
+* @return true
 *
 * This function generates the random target position and orientation to be achieved by
 * the robot.
@@ -65,9 +67,7 @@ bool myrandom (rt2_assignment1::RandomPosition::Request &req, rt2_assignment1::R
 
 
 /**
-* \brief Main function of the position_service node
-* \param: None
-* \return 0 
+* @brief Main function of the position_service node
 *
 * This is the main function of the position_service node in which thw node is initialized and
 * it is also implemented a service that send a randomly generated position and orientation in
