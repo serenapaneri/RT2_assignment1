@@ -40,15 +40,63 @@ source /root/your_ros2_ws/install/local_setup.bash
 For the communication between ros1 and ros2 with the bridge you should create a file ros12.sh:
 ```
 #! /bin/bash
-source /opt/ros/noetic/setup.bash
-source /opt/ros/foxy/setup.bash
+source /root/your_ros1_ws/devel/setup.bash
+source /root/your_ros2_ws/install/setup.bash
 ```
 
 ### Warnings
-Before running the code correctly you should download also the package in the branch main and put it in your ros1 worksapce. Moreover you need to do a little modification that consists on opening the launch file [**sim.launch**](https://github.com/serenapaneri/rt2_assignment1/blob/main/launch/sim.launch) and delete the lines related to the nodes **user_interface.py** and **go_to_point.py**.
+Before running the code correctly you should download also the package in the branch ros12 and put it in your ros1 worksapce. 
+```
+git clone --branch ros12 https://github.com/serenapaneri/rt2_assignment1.git
+```
 
 ## How to run the code
-In order to run the Gazebo simulation:
+You have to follow the following steps after cloning your repositories in your ros1 and ros2 workspaces (from the indication abovementioned), you'll need 3 different terminals:
+1. In the first terminal:
 ```
-./sim_start.sh
+source ros.sh
 ```
+and then run the command:
+```
+cd your_ros1_ws
+catkin_make
+```
+
+2. In the second terminal:
+```
+source ros2.sh
+```
+and then run the command:
+```
+cd your_ros2_ws 
+colcon build --packages-skip ros1_bridge
+
+```
+
+3. In the third terminal:
+```
+source ros12.sh
+```
+and then run the command:
+```
+cd your_ros2_ws 
+colcon build --packages-select ros1_bridge --cmake-force-configure
+
+```
+Then to finally run the code
+
+4. Again in the first terminal:
+```
+roslaunch rt2_assignment1 sim.launch
+```
+
+5. Again in the third terminal:
+```
+ros2 run ros1_bridge dynamic_bridge
+```
+
+6. Finally in the second terminal:
+```
+ros2 launch rt2_assignment1 ros2.py
+```
+

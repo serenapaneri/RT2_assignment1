@@ -21,12 +21,13 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(example_interfaces REQUIRED)
+
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Command.srv"
   "srv/RandomPosition.srv"
   "srv/Position.srv"
-  DEPENDENCIES std_msgs
 )
 
 add_library(state_machine_component SHARED
@@ -56,7 +57,9 @@ ament_target_dependencies(position_service_component rclcpp std_msgs rclcpp_comp
 
 install(TARGETS
   state_machine_component
+  component_state_machine
   position_service_component
+  component_position_service
   DESTINATION lib/${PROJECT_NAME}
   LIBRARY DESTINATION lib)
 
