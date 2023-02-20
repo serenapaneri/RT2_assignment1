@@ -6,7 +6,9 @@ from geometry_msgs.msg import Twist, Point
 from nav_msgs.msg import Odometry
 from tf import transformations
 from rt2_assignment1.srv import Position
+from rt2_assignment1.srv import Finish, FinishResponse
 import math
+import time
 
 # robot state variables
 position_ = Point()
@@ -16,6 +18,8 @@ state_ = 0
 
 #publisher used for cmd_vel
 pub_ = None
+
+reached = False
 
 # parameters for control
 yaw_precision_ = math.pi / 9  # +/- 20 degree allowed
@@ -46,6 +50,12 @@ def clbk_odom(msg):
         msg.pose.pose.orientation.w)
     euler = transformations.euler_from_quaternion(quaternion)
     yaw_ = euler[2]
+    
+def finish_handle(req):
+    global reached
+    res = FinishResponse()
+    res.finish = reached
+    return res
 
 
 def change_state(state):
@@ -153,21 +163,25 @@ def go_to_point(req):
     states of the robot in a way to achieve the correct 
     behavior to be followed in order to reach the goal.
     """
+    global reached
     desired_position = Point()
     desired_position.x = req.x
     desired_position.y = req.y
     des_yaw = req.theta
     change_state(0)
     while True:
-    	if state_ == 0:
-    		fix_yaw(desired_position)
-    	elif state_ == 1:
-    		go_straight_ahead(desired_position)
-    	elif state_ == 2:
-    		fix_final_yaw(des_yaw)
-    	elif state_ == 3:
-    		done()
-    		break
+        if state_ == 0:
+    	    reached = False
+    	    fix_yaw(desired_position)
+        elif state_ == 1:
+            go_straight_ahead(desired_position)
+        elif state_ == 2:
+            fix_final_yaw(des_yaw)
+        elif state_ == 3:
+            done()
+            reached = True
+            time.sleep(2)
+            break
     return True
 
 def main():
@@ -180,6 +194,7 @@ def main():
     pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
     service = rospy.Service('/go_to_point', Position, go_to_point)
+    finish_srv = rospy.Service('/finished', Finish, finish_handle)
     rospy.spin()
 
 if __name__ == '__main__':
