@@ -39,7 +39,7 @@ Then to control the robot, in another terminal you have to type:
 ```
 jupyter notebook --allow-root --ip 0.0.0.0
 ```
-Open the **user_interface.ipybn** in the [**notebook**](https://github.com/serenapaneri/rt2_assignment1/blob/sphinix/notebook) folder and start to interact with the robot. 
+Open the **user_interface.ipybn** in the [**notebook**](https://github.com/serenapaneri/rt2_assignment1/blob/sphinx/notebook) folder and start to interact with the robot. 
 All the explanation are inside the **user_interface.ipybn** file.
 
 ## Sphinx documentation
